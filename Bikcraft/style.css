@@ -48,10 +48,13 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 1000px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .info {
-  grid-column: 1; /* Adicionado para alinhar no grid */
+  grid-column: 1;
   display: grid;
   align-content: center;
   gap: 20px;
@@ -87,7 +90,7 @@ p {
 }
 
 .vantagens {
-  grid-column: 1; /* Adicionado para alinhar no grid */
+  grid-column: 1;
   font-size: 64px;
   color: #c6c6c6;
   text-align: right;
@@ -97,7 +100,7 @@ p {
 }
 
 .icones {
-  grid-column: 2; /* Adicionado para alinhar no grid */
+  grid-column: 2;
   background-color: white;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -122,4 +125,71 @@ p {
   text-align: center;
   padding: 40px;
   box-sizing: border-box;
+}
+
+/* Tablets (601px to 1024px) */
+@media (max-width: 1024px) {
+  .corpo {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .imagem {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .info {
+    grid-column: 1;
+    text-align: left;
+    justify-items: start;
+  }
+
+  .detalhe {
+    right: auto;
+    left: 0;
+  }
+
+  .vantagens {
+    grid-column: 1;
+    text-align: left;
+    font-size: 32px;
+  }
+
+  .icones {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    gap: 20px 20px;
+  }
+
+  .icones img {
+    justify-self: start;
+  }
+}
+
+/* Mobile devices (up to 600px) */
+@media (max-width: 600px) {
+  body {
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .menu a {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .info,
+  .vantagens,
+  .icones {
+    padding: 20px;
+  }
+
+  .vantagens {
+    font-size: 24px;
+  }
 }
